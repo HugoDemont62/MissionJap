@@ -31,7 +31,6 @@
         &__rect {
             width: 32px;
             height: 32px;
-            background: linear-gradient(180deg, #33c863 0%, #51ed83 51.09%, #2cbd5b 100%);
             margin: 0 12px 0 0;
             display: flex;
             justify-content: center;
@@ -49,7 +48,7 @@
             line-height: 30px;
             letter-spacing: $letterSpacing;
             font-weight: 800;
-            color: $green;
+            color: $red;
 
             .light__mode {
                 color: $dark;
@@ -75,7 +74,7 @@
             border-left: 4px solid transparent;
             width: 100%;
             &.isActive {
-                border-left-color: $green;
+                border-left-color: $red;
             }
 
             .link {
@@ -108,7 +107,7 @@
 
             &.isActive .link {
                 &__text {
-                    color: $green;
+                    color: $red;
                 }
             }
         }

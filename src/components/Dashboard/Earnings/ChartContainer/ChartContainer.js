@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
+import React, { useCallback, useContext, useEffect,  useState } from "react";
 import UiContext from "../../../../store/ui-context";
 import { Chart } from "react-chartjs-2";
 import {
@@ -67,14 +67,14 @@ const createOptions = (uiCtx) => ({
 const createData = () => {
     return ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map(
         (month) => {
-            const profit = Math.round(Math.random() * 800) + 500;
-            const newUsers = ~~(Math.random() * 1000) + 50;
+            const hugo = Math.round(Math.random() * 800) + 500;
+            const may = ~~(Math.random() * 1000) + 50;
 
             return {
                 month,
-                sales: Math.round(profit / 5),
-                profit,
-                newUsers,
+                sales: Math.round(hugo / 5),
+                hugo,
+                may,
             };
         }
     );
@@ -108,33 +108,25 @@ const ChartContainer = () => {
         labels: data.map(({ month }) => month),
         datasets: [
             {
-                label: "Sales",
-                backgroundColor: "rgba(51,200,99,.1)",
-                borderColor: "rgba(51,200,99,.7)",
+                label: "Hugo",
+                backgroundColor: "rgba(116,242,74,0.1)",
+                borderColor: "rgb(22,213,1)",
                 fill: true,
-                data: data.map(({ sales }) => sales),
+                data: data.map(({ hugo }) => hugo),
                 lineTension: 0.2,
             },
             {
-                label: "Profit",
-                backgroundColor: "rgba(242,153,74,.1)",
-                borderColor: "rgba(242,153,74,.7)",
+                label: "May",
+                backgroundColor: "rgba(0,59,253,0.1)",
+                borderColor: "rgba(0,62,255,0.7)",
                 fill: true,
-                data: data.map(({ profit }) => profit),
-                lineTension: 0.2,
-            },
-            {
-                label: "New Users",
-                backgroundColor: "rgba(166, 74, 242,.1)",
-                borderColor: "rgba(166, 74, 242,.7)",
-                fill: true,
-                data: data.map(({ newUsers }) => newUsers),
+                data: data.map(({ may }) => may),
                 lineTension: 0.3,
             },
         ],
     };
 
-    if (loading) return "Loading...";
+    if (loading) return "Loading... tralalala";
 
     return <Chart type="line" data={chartData} options={createOptions(uiCtx)} />;
 };
